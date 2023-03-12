@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    display: flex;
+    width: 100%;
+    height: 56px;
+    background-color: #b8b9b3;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0px 20px;
+}
+
+.Logo,
+.SIDEDRAWER{
+    font-size: 3em;
+}
+
+.SIDEDRAWER{
+    visibility: hidden;
+}
+
+.nav{
+    height: 100%;
+}
+
+
+@media screen and (max-width:500px){
+    .SIDEDRAWER{
+        visibility: visible;
+    }
+
+    .nav{
+        display: none;
+    }
+
+    .header{
+        padding:0;
+    }
+}

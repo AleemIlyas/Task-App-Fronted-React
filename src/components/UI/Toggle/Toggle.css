@@ -1,0 +1,22 @@
+.Toggle{
+    height: 45px;
+    width: 10em;
+    margin: 0 1px;
+    padding: 4px 12px;
+    border: 3px solid #050701;
+    font-family: cursive;
+    font-weight: bolder;
+    color: white;
+    background-color: #000000;
+}
+.Toggle:hover{
+    cursor: pointer;
+}
+
+.Toggle.active,
+.Toggle:hover{
+    border: 2px solid #cfd1cc;
+    background-color: #888b81;
+    color:white
+
+}

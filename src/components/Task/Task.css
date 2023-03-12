@@ -1,0 +1,35 @@
+.Task{
+    width: 80%;
+    margin: 0 auto;
+    border: 2px solid #a0a29a;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    padding: 12px 16px;
+    font-size: 1.2em;
+    overflow-wrap: break-word;
+}
+
+.Task h2{
+    display: inline;
+}
+
+.option{
+    font-weight: bolder;
+    font-size: 2em;
+    text-align: center;
+}
+.option * {
+    margin: 0px 1em;
+}
+.option *:hover{
+    cursor: pointer;
+}
+.option *:nth-child(1):hover{
+    color: gray;
+}
+.option *:nth-child(2):hover{
+    color: green;
+}
+.option .close:hover{
+    color: red;
+}

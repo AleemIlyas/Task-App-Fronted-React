@@ -1,0 +1,26 @@
+.SideDrawer{
+    width: 70%;
+    height:100vh;
+    position:fixed;
+    bottom:0;
+    top:0;
+    background:#888b81;
+    z-index:1000;
+    padding-left: .3em;
+    transition: .4s;
+}
+
+.Logo{
+    margin:20px 0 20px 20px;
+    text-align: left;
+}
+
+.Close{
+    display:flex;
+    justify-content : right;
+    float:right;
+}
+
+.Close * {
+    color:red;
+}

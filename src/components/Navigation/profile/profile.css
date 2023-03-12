@@ -1,0 +1,41 @@
+.profile{
+    width: 100px;
+    height: 100%;
+    box-sizing: content-box;
+    margin-left: 1%;
+}
+
+.profile .img{
+    border-radius: 50%;
+    border: 2px solid #cfd1cc;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    transition: .2s;
+}
+
+.profile .img:hover{
+    cursor: pointer;
+    border: 2px solid #000;
+}
+
+.links{
+    padding: 2px;
+    position: absolute;
+    z-index: 1;
+    margin-top: 4px;
+    background-color: #b8b9b3;
+    width: 120px;
+}
+
+.links li{
+    text-align: left;
+    margin: 0;
+}
+
+.links li a{
+    box-sizing: content-box;
+    padding: 0px;
+    padding: 8px 0px;
+    width: 100%;
+}

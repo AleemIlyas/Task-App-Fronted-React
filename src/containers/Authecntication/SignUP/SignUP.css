@@ -1,0 +1,21 @@
+.form{
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+    border: 2px solid #b8b9b3;
+    padding: 20px;
+}
+
+.btn{
+    color:#707467;
+    transition: .2s;
+}
+
+.btn:hover{
+    cursor: pointer;
+    color: green;
+}
+
+.Error{
+    color: red;
+}
