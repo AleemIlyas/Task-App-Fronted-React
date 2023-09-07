@@ -1,5 +1,5 @@
 import * as actionTypes from './actionType.js';
-import axios from 'axios';
+import AxiosInstance from '../../axios/axiosInstance.js';
 
 export const getuser=()=>{
     return{
@@ -27,7 +27,7 @@ export const log_user_out=()=>{
 export const login=(data)=>{
     return dispatch=>{
         dispatch(authStart())
-        axios.post('/users/login',data)
+        AxiosInstance.post('/users/login',data)
         .then(res=>{
             const expireIn = new Date( new Date().getTime() + res.data.expiresIn * 1000 )
             localStorage.setItem('token','Bearer '+res.data.token)
@@ -65,7 +65,7 @@ export const authFail=(error)=>{
 export const SignUP=(data)=>{
     return dispatch =>{
         dispatch(authStart())
-        axios.post('/users',data)
+        AxiosInstance.post('/users',data)
         .then(res=>{
             const expireIn = new Date( new Date().getTime() + res.data.expiresIn * 1000 )
             localStorage.setItem('token','Bearer ' + res.data.token)

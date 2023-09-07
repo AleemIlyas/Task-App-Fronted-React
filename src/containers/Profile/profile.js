@@ -3,7 +3,7 @@ import classes from './profile.css'
 import Input from '../../components/UI/Input/Input';
 import updateObject from '../../shared/updateObject';
 import Button from '../../components/UI/Button/Button';
-import axios from 'axios';
+import AxiosInstance from '../../axios/axiosInstance'
 import Toast from '../../components/UI/Toast/toast';
 import {connect} from 'react-redux'
 import validate from '../../shared/validate'
@@ -87,7 +87,7 @@ class profile extends Component {
   uploadImage = async () =>{
     const data = new FormData()
     data.append("avatar" , this.state.file )
-    axios.post('/users/me/avatar' , data , {
+    AxiosInstance.post('/users/me/avatar' , data , {
         headers:{
           'Content-Type': 'multipart/form-data',
           'Authorization' : this.props.token
@@ -101,12 +101,12 @@ class profile extends Component {
   }
 
     componentDidMount(){
-      axios.get('/users/me/'+this.props.id+'/avatar')
+      AxiosInstance.get('/users/me/'+this.props.id+'/avatar')
         .then(res=> this.setState({imgsrc:'/users/me/'+this.props.id+'/avatar'}) )
         .catch(err=>this.setState({imgsrc:null}))
 
 
-      axios.get('/users/me',{
+      AxiosInstance.get('/users/me',{
         headers:{
           'Authorization': this.props.token
         }
@@ -136,7 +136,7 @@ class profile extends Component {
 
         if(formData['password'] !== formData['ConfirmPassword'] ) return this.setState({msg:'Password Must be same!'})
         delete formData['ConfirmPassword']
-        axios.patch('/users/update', formData , {
+        AxiosInstance.patch('/users/update', formData , {
             headers:{
               'Authorization': this.props.token
             }

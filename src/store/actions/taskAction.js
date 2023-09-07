@@ -1,5 +1,5 @@
 import * as actionTypes from './actionType.js';
-import axios from 'axios';
+import AxiosInstance from '../../axios/axiosInstance.js';
 
 export const getINIT=()=>{
     return{
@@ -12,7 +12,7 @@ export const getTasks = (value)=>{
     return async dispatch=>{
         dispatch(getINIT())
         const token = await localStorage.getItem('token')
-        axios.get('/task?completed='+value,{
+        AxiosInstance.get('/task?completed='+value,{
             headers :{
                 'Authorization' : token
             }
@@ -41,7 +41,7 @@ export const markCompleted = (id)=>{
         complete : true
     }
     return dispatch=>{
-        axios.patch('/task/'+id,data,{
+        AxiosInstance.patch('/task/'+id,data,{
             headers :{
                 'Authorization' : localStorage.getItem('token')
             }
@@ -78,7 +78,7 @@ export const saveTask=(data)=>{
     return dispatch=>{
         dispatch(getINIT())
         const token = localStorage.getItem('token')
-        axios.post('/task',data,{
+        AxiosInstance.post('/task',data,{
             headers :{
                 'Authorization' : token
             }
@@ -91,7 +91,7 @@ export const saveTask=(data)=>{
 
 export const deleteTask=(id)=>{
     return dispatch=>{
-        axios.delete('/task/'+id,{
+        AxiosInstance.delete('/task/'+id,{
             headers:{
                 'Authorization':localStorage.getItem('token')
             }

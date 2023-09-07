@@ -6,7 +6,7 @@ import Button from '../../../components/UI/Button/Button'
 import Toast from '../../../components/UI/Toast/toast';
 import updateObject from '../../../shared/updateObject'
 import validator from '../../../shared/validate'
-import axios from 'axios';
+import AxiosInstance from '../../../axios/axiosInstance'
 
 function Edit(props) {
   const [valid,setValid] = useState(false)
@@ -63,7 +63,7 @@ function Edit(props) {
     useEffect(()=>{
         const fetchTask = (cb)=>{
         const token = localStorage.getItem('token')
-        axios.get('/task/'+id,{
+        AxiosInstance.get('/task/'+id,{
             headers :{
                 'Authorization' : token
             }
@@ -96,7 +96,7 @@ function Edit(props) {
           data[v] = form[v].value
       }
       const token = localStorage.getItem('token')
-      axios.patch('/task/'+id , data , {
+      AxiosInstance.patch('/task/'+id , data , {
         headers :{
           'Authorization' : token
       }
