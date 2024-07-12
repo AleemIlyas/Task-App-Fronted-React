@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const AxiosInstance = axios.create({
-    baseURL : 'https://light-slug-slacks.cyclic.app',
+    baseURL: 'https://taskapp-aleemilyas.azurewebsites.net/',
 })
 
 export default AxiosInstance
